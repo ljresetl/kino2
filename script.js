@@ -373,7 +373,7 @@ if (window.location.pathname.includes('movie.html')) {
         <p><strong>Якість:</strong> ${movie.quality}</p>
 
         <h2>🎬 Дивитися онлайн</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden;">
           <iframe 
             src="${embedUrl}" 
             frameborder="0" 
