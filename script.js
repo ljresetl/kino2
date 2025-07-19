@@ -349,7 +349,7 @@ if (window.location.pathname.includes('movie.html')) {
       quality: "BDRip",
       image: "./images/foto-movies2.png",
       // звичайна YouTube-ссилка (можна копіювати з браузера)
-      videoUrl: "https://www.youtube.com/watch?v=s3E0p4bSI50&list=RDs3E0p4bSI50&start_radio=1",
+      videoUrl: "https://www.youtube.com/watch?v=LUVr6yAzq2g",
     },
     // інші фільми...
   };
