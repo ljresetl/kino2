@@ -31,7 +31,7 @@ button {
 
 .search-btn {
   display: flex;
-  padding: 4px 3px;
+  padding: 4px 2px;
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
@@ -107,6 +107,6 @@ button {
   }
 
   .search-btn {
-    padding: 13px 18px;
+    padding: 13px 10px;
   }
 }
