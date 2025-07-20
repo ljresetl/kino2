@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol,
+button {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  font-style: normal;
+}
+
+button {
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+  padding: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,30 @@
+.footer {
+  padding: 20px 0px;
+}
+
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.container-footer-btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #a14f4f;
+  color: #fff;
+  min-width: 320px;
+}
+
+.container-footer-note {
+  font-weight: bold;
+}

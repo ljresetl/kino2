@@ -1,0 +1,17 @@
+.opis-kino-ua {
+  padding: 20px 0px;
+}
+
+.container-opis-kino-ua {
+  flex-direction: column;
+  text-align: left;
+  gap: 20px;
+}
+
+.opis-kino-ua-h3 {
+  font-size: 24px;
+}
+
+.opis-kino-ua-p {
+  font-size: 14px;
+}

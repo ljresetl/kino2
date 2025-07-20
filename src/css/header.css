@@ -1,0 +1,14 @@
+.header-container {
+  display: flex;
+  padding: 10px 0px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+
+.icon-btn {
+  padding: 10px;
+  background-color: rgb(210, 136, 25);
+  border: none;
+  border-radius: 4px;
+}

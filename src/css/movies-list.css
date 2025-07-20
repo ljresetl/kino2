@@ -1,0 +1,19 @@
+.search-bar-nav {
+  padding: 10px 0px;
+}
+
+.container-movies {
+  display: flex;
+  justify-content: space-between;
+  /* padding-top: 10px; */
+}
+
+.movie-card {
+  width: 33%;
+  text-align: center;
+  align-items: center;
+}
+
+.movies-img {
+  width: 100%;
+}

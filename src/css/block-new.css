@@ -1,0 +1,40 @@
+.block-new {
+  padding: 20px 0px;
+}
+
+.container-block-new {
+  background-color: #7c7676;
+  border-radius: 8px;
+  color: var(--tt);
+  letter-spacing: 0.02em;
+  font: 14px 'Manrope', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.container-block-new-block {
+  display: flex;
+  gap: 40px;
+}
+
+.container-block-new-h2 {
+  padding: 16px 0px 0px 0px;
+}
+
+.block-new-content {
+  text-align: left;
+}
+
+.container-block-new-h3 {
+  margin-bottom: 10px;
+}
+
+.container-block-new-img {
+  border-radius: 4px;
+}
+
+.container-block-new:last-child {
+  padding-bottom: 20px;
+}
