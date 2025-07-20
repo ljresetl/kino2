@@ -12,3 +12,30 @@
   border: none;
   border-radius: 4px;
 }
+
+/* Для мобільної: сховати текст */
+@media (max-width: 480px) {
+  .icon-btn-vhid::after {
+    content: '';
+  }
+}
+
+/* Для планшета: показати текст */
+@media (min-width: 481px) {
+  .icon-btn-vhid::after {
+    content: ' Вхід';
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .header-icons {
+    display: flex;
+    gap: 30px;
+  }
+}

@@ -45,7 +45,35 @@
 
 .filter-toggle {
   background-color: transparent;
-  width: 100%;
+  width: 100% !important;
   /* height: 100%; */
   border: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .container-filters {
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки по 25% */
+  }
+
+  .filter-toggle {
+    padding: 10px 16px;
+  }
+
+  .filter-buttons {
+    grid-column: 1 / -1; /* Займає всі колонки */
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .apply-btn,
+  .reset-btn {
+    width: 300px; /* фіксована ширина */
+    max-width: 100%; /* щоб не виходило за межі на малих екранах */
+  }
 }

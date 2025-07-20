@@ -17,7 +17,7 @@ button {
 .search-bar {
   display: flex;
   justify-content: space-between;
-  /* gap: 1px; */
+  gap: 2px;
   align-items: center;
   text-align: center;
 }
@@ -31,7 +31,7 @@ button {
 
 .search-btn {
   display: flex;
-  padding: 13px 3px;
+  padding: 4px 3px;
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
@@ -77,4 +77,36 @@ button {
   box-shadow: none;
   height: 30px;
   line-height: 36px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .searchInput {
+    min-width: 76%;
+  }
+
+  .main-nav {
+    justify-content: center;
+    gap: 2px;
+  }
+
+  /* .search-bar {
+    gap: 5px;
+  } */
+
+  .main-nav-button {
+    min-width: 24.8%;
+  }
+
+  .tabs {
+    gap: 2px;
+  }
+
+  .search-btn {
+    padding: 14px 18px;
+  }
 }
