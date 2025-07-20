@@ -27,6 +27,7 @@ button {
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
+  width: 63%;
 }
 
 .search-btn {
