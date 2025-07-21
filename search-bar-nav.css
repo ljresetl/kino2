@@ -27,7 +27,7 @@ button {
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
-  width: 63%;
+  width: 59%;
 }
 
 .search-btn {
@@ -36,7 +36,7 @@ button {
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
-  min-height: 100% !important;
+  min-height: 20% !important;
 }
 
 .theme-toggle {
@@ -45,6 +45,7 @@ button {
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
+  min-height: 20% !important;
 }
 
 .main-nav {
