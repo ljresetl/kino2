@@ -100,8 +100,8 @@
 }
 
 /* Desktop (>=1280px) */
-@media only screen and (min-width: 1280px) {
+/* @media only screen and (min-width: 1280px) {
   .movies-list-movie-card {
     border: 2px solid #171715;
   }
-}
+} */
