@@ -13,6 +13,10 @@
   border-radius: 4px;
 }
 
+.search-bar-deskopt {
+  display: none;
+}
+
 /* Для мобільної: сховати текст */
 @media (max-width: 480px) {
   .icon-btn-vhid::after {
@@ -37,5 +41,13 @@
   .header-icons {
     display: flex;
     gap: 30px;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1280px) {
+  .container {
+    max-width: 1340px;
+    padding: 0 50px;
   }
 }
