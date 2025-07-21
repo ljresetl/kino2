@@ -8,6 +8,15 @@
 
 .logo {
   background-color: transparent;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #c9d1d9;
+  transition: color 0.2s;
+}
+
+.logo:hover {
+  color: #1f6feb;
 }
 
 .icon-btn {
@@ -44,6 +53,10 @@
 }
 
 @media only screen and (min-width: 1280px) {
+  .logo {
+    margin-right: 20px;
+  }
+
   .header-container {
     /* align-items: flex-end; */
     justify-content: space-between;
@@ -71,13 +84,16 @@
     box-shadow: none;
     height: 45px;
     line-height: 36px;
-    min-width: 800px !important;
+    min-width: 600px;
     border-radius: 4px;
-    color: azure !important;
+    color: #c9d1d9 !important;
+    background-color: #0d1117;
+    border-radius: 6px;
+    outline: none;
   }
 
   .searchInput-deskopt::placeholder {
-    color: azure !important;
+    color: #8b949e !important;
   }
 
   .search-btn-deskopt {
@@ -86,15 +102,21 @@
     background-color: rgb(51, 53, 54) !important;
     border: none;
     border-radius: 3px;
+    background-color: #238636 !important;
     /* min-width: 20% !important; */
   }
 
   .theme-toggle-deskopt {
     min-height: 42px;
     padding: 13px 11px;
-    background-color: rgb(51, 53, 54) !important;
+    background-color: #238636 !important;
     border: none;
     border-radius: 3px;
     /* min-width: 20% !important; */
+  }
+
+  .theme-toggle-deskopt,
+  .search-btn-deskopt:hover {
+    background-color: #3fa34e !important;
   }
 }
