@@ -30,10 +30,10 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .container {
+  /* .container {
     max-width: 768px;
     padding: 0 32px;
-  }
+  } */
 
   .container-footer {
     flex-direction: row;

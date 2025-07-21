@@ -26,8 +26,7 @@
   padding: 10px 0px;
   background-color: #383636 !important;
   border-radius: 4px;
-  min-width: 170px !important;
-  /* width: 100% !important; */
+  /* min-width: 170px !important; */
 }
 
 .apply-btn,
@@ -46,18 +45,17 @@
 .filter-toggle {
   background-color: transparent;
   width: 100% !important;
-  /* height: 100%; */
   border: none;
 }
 
 @media only screen and (min-width: 768px) {
-  .container {
+  /* .container {
     max-width: 768px;
     padding: 0 32px;
-  }
+  } */
 
   .container-filters {
-    grid-template-columns: repeat(4, 1fr); /* 4 колонки по 25% */
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .filter-toggle {
@@ -65,7 +63,7 @@
   }
 
   .filter-buttons {
-    grid-column: 1 / -1; /* Займає всі колонки */
+    grid-column: 1 / -1;
     display: flex;
     gap: 10px;
     margin-top: 20px;
@@ -73,7 +71,7 @@
 
   .apply-btn,
   .reset-btn {
-    width: 300px; /* фіксована ширина */
-    max-width: 100%; /* щоб не виходило за межі на малих екранах */
+    width: 300px;
+    max-width: 100%;
   }
 }

@@ -131,10 +131,10 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .container {
+  /* .container {
     max-width: 768px;
     padding: 0 32px;
-  }
+  } */
 
   .container-movie-list {
     align-items: flex-start;
