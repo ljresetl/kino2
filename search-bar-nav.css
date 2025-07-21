@@ -32,11 +32,11 @@ button {
 
 .search-btn {
   display: flex;
-  padding: 13px 8px;
+  padding: 4px 8px;
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
-  min-height: 20% !important;
+  min-width: 20% !important;
 }
 
 .theme-toggle {
@@ -45,7 +45,7 @@ button {
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
-  min-height: 20% !important;
+  min-width: 20% !important;
 }
 
 .main-nav {
