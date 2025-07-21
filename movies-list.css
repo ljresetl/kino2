@@ -8,6 +8,18 @@
   /* padding-top: 10px; */
 }
 
+/* Спочатку приховуємо всі картки */
+.movie-card {
+  display: none;
+}
+
+/* Мобільна версія: показуємо лише перші 3 */
+.movie-card[data-index='1'],
+.movie-card[data-index='2'],
+.movie-card[data-index='3'] {
+  display: block;
+}
+
 .movie-card {
   width: 33%;
   text-align: center;
@@ -16,4 +28,30 @@
 
 .movies-img {
   width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .movie-card[data-index='4'] {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container-movies {
+    background-color: rgb(80, 82, 84);
+    padding: 70px;
+    border-radius: 6px;
+  }
+
+  .movie-card {
+    width: 141px;
+    height: 214px;
+  }
+  .movie-card[data-index='5'] {
+    display: block;
+  }
+
+  .movies-img {
+    margin-bottom: 20px;
+  }
 }

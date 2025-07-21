@@ -49,11 +49,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  /* .container {
-    max-width: 768px;
-    padding: 0 32px;
-  } */
-
   .container-filters {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -73,5 +68,31 @@
   .reset-btn {
     width: 300px;
     max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .filter-item {
+    min-width: 10%;
+  }
+
+  .filter-toggle {
+    padding: 11px;
+  }
+
+  .apply-btn,
+  .reset-btn {
+    width: 200px;
+  }
+
+  .filter-buttons {
+    margin-top: 0px;
   }
 }
