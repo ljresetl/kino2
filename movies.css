@@ -7,7 +7,6 @@
 .movie-poster {
   display: flex;
   flex-direction: column;
-  width: 100%;
   gap: 20px;
 }
 
@@ -72,4 +71,29 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .container-movie-list {
+    gap: 50px;
+  }
+
+  .movies-list-movie-card {
+    display: flex;
+    gap: 30px;
+  }
+
+  .movie-poster-img {
+    width: 100%;
+  }
+
+  .btn-online {
+    max-width: 100%;
+    margin: 0px;
+  }
+
+  .movie-meta {
+    justify-content: end;
+  }
 }
