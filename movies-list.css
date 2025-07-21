@@ -4,9 +4,10 @@
 
 .container-movies {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   /* background-color: #0d1117; */
   /* padding-top: 10px; */
+  gap: 10px;
 }
 
 /* Спочатку приховуємо всі картки */
@@ -29,11 +30,16 @@
 
 .movies-img {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 768px) {
   .movie-card[data-index='4'] {
     display: block;
+  }
+
+  .container-movies {
+    gap: 20px;
   }
 }
 
@@ -41,11 +47,12 @@
   .container-movies {
     padding: 70px;
     border-radius: 6px;
+    justify-content: space-between;
   }
 
   .movie-card {
-    width: 141px;
-    height: 214px;
+    width: 181px;
+    height: 254px;
   }
   .movie-card[data-index='5'] {
     display: block;
@@ -53,5 +60,8 @@
 
   .movies-img {
     margin-bottom: 20px;
+    padding: 5px;
+    background-color: rgb(45, 161, 68);
+    border-radius: 6px;
   }
 }
