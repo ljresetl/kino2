@@ -80,7 +80,7 @@
 
   .searchInput-deskopt {
     border-radius: 3px;
-    background-color: #5e5757dd;
+    /* background-color: #5e5757dd; */
     box-shadow: none;
     height: 45px;
     line-height: 36px;
