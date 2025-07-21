@@ -1,84 +1,50 @@
-/* Основне оформлення */
-/* .movies {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
-
 .container-movie-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: #2a2a2a;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  gap: 10px;
 }
 
-.movies-list {
+.movie-poster {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.movie-poster-img {
+  width: 100%;
+}
+
+.btn-online {
+  width: 370px;
+  max-width: 100%;
+  background-color: #709447;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 20px;
+}
+
+.text-rating {
+  display: flex;
+}
+
+.movie-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .pagination {
   display: flex;
   flex-direction: column;
-  max-width: 350px;
-  margin-top: 20px;
-  gap: 20px;
-}
-
-.movies-list-movie-card {
-  display: flex;
-  flex-direction: column;
-  padding: 0px;
-  align-items: center;
-  /* min-width: 370px; */
-}
-
-.movie-poster-img {
-  border-radius: 6px;
-  width: 100%;
-  /* text-align: center;
-  align-items: center; */
-  width: 100%;
-  height: auto;
-}
-
-.foto-rating {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
+  gap: 10px;
   justify-content: center;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-}
-
-.movie-poster {
-  width: 50%;
-}
-
-.rating-box-kino {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  width: 50%;
-}
-
-.logo-imdb-kino,
-.logo-tmdb-kino {
-  width: 28px;
-  height: auto;
-}
-
-.movie-info-block {
-  text-align: left;
-  margin-left: 14px;
 }
 
 .load-more {
@@ -90,103 +56,20 @@
   cursor: pointer;
   display: flex;
   margin: 0 auto;
+  max-width: 50%;
 }
 
-.page-numbers .page {
+.page-numbers {
+  display: flex;
+  gap: 3px;
+}
+
+.page {
   background-color: #444;
   color: #fff;
-  padding: 6px 10px;
+  padding: 6px 6px;
   margin: 2px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.page-numbers .page.active {
-  background-color: #b2ff59;
-  color: #000;
-}
-
-.rating-stars-kino {
-  font-size: 16px;
-  text-align: center;
-  color: #b2ff59; /* світло-зелений */
-}
-
-.btn-online {
-  background-color: #709447;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 24px;
-  width: 100%;
-}
-
-.btn-online:hover {
-  background-color: #b2ff59;
-}
-
-@media only screen and (min-width: 768px) {
-  /* .container {
-    max-width: 768px;
-    padding: 0 32px;
-  } */
-
-  .container-movie-list {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .movies-list-movie-card {
-    min-width: 550px;
-    width: 100%;
-  }
-
-  .foto-rating {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    min-width: 700px;
-    max-width: 100%;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .rating-box-kino {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    width: 50%;
-  }
-
-  .movie-info-block {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: right;
-  }
-
-  .pagination {
-    margin: 0 auto;
-    min-width: 380px;
-  }
-
-  .page-numbers {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 20px;
-  }
-
-  .btn-online {
-    margin-top: 284px;
-    padding: 6px 10px;
-    min-width: 350px;
-    max-width: 100%;
-  }
 }
