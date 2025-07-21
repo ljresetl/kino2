@@ -105,3 +105,14 @@ button {
     padding: 13px 10px;
   }
 }
+
+@media only screen and (min-width: 1280px) {
+  /* .container {
+    max-width: 1600px;
+    padding: 0 50px;
+  } */
+
+  .search-bar {
+    display: none;
+  }
+}
