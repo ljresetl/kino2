@@ -88,18 +88,10 @@ button {
     padding: 0 32px;
   }
 
-  .searchInput {
-    min-width: 79%;
-  }
-
   .main-nav {
     justify-content: center;
     gap: 2px;
   }
-
-  /* .search-bar {
-    gap: 5px;
-  } */
 
   .main-nav-button {
     min-width: 24.8%;
