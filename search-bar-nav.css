@@ -54,7 +54,7 @@ button {
 }
 
 .main-nav-button {
-  padding: 7px;
+  padding: 6px 6px;
   background-color: rgb(88, 89, 90);
   border-radius: 3px;
 }
