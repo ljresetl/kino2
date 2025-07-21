@@ -52,7 +52,7 @@
 
   .movie-card {
     width: 181px;
-    height: 254px;
+    height: 274px;
   }
   .movie-card[data-index='5'] {
     display: block;
@@ -61,7 +61,7 @@
   .movies-img {
     margin-bottom: 20px;
     padding: 5px;
-    background-color: rgb(45, 161, 68);
+    background-color: rgb(160, 208, 170);
     border-radius: 6px;
   }
 }
