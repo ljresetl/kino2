@@ -1,6 +1,6 @@
 /* Базовий стиль — завжди width: 100% */
 .container {
-  width: 100%;
+  width: 100% !important;
   min-width: 320px;
   max-width: 390px;
   margin: 0 auto;
