@@ -15,11 +15,12 @@ html {
 }
 body {
   background-color: #000000;
-  color: #dfd9e5;
+  color: #c9d1d9;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.4;
+  background-color: #0d1117;
 }
 
 a,
@@ -36,6 +37,8 @@ input::placeholder {
 a,
 button {
   cursor: url('/img/cursor.svg'), pointer;
+  background-color: #238636;
+  white-space: nowrap;
 }
 
 button {
@@ -44,6 +47,11 @@ button {
   cursor: pointer;
   max-width: 141px;
   padding: 14px 32px;
+  background-color: #238636;
+}
+a,
+button:hover {
+  background-color: #2ea043;
 }
 
 @media only screen and (min-width: 768px) {
@@ -54,6 +62,7 @@ button {
 }
 
 .section {
+  background-color: #0d1117;
   padding: 40px 0;
 }
 @media only screen and (min-width: 768px) {

@@ -1,6 +1,6 @@
-button {
+/* button {
   padding: 0px;
-}
+} */
 
 .main-nav-button-tab {
   display: none;
@@ -37,7 +37,7 @@ button {
 .search-btn {
   display: flex;
   padding: 4px 8px;
-  background-color: rgb(51, 53, 54) !important;
+  /* background-color: rgb(51, 53, 54) !important; */
   border: none;
   border-radius: 3px;
   min-width: 20% !important;
@@ -46,7 +46,7 @@ button {
 .theme-toggle {
   min-height: 42px;
   padding: 13px 11px;
-  background-color: rgb(51, 53, 54) !important;
+  /* background-color: rgb(51, 53, 54) !important; */
   border: none;
   border-radius: 3px;
   min-width: 20% !important;
@@ -60,7 +60,7 @@ button {
 
 .main-nav-button {
   padding: 6px 8px;
-  background-color: rgb(88, 89, 90);
+  /* background-color: rgb(88, 89, 90); */
   border-radius: 3px;
 }
 
@@ -74,7 +74,7 @@ button {
 .tab {
   padding: 9px;
   width: 50%;
-  background-color: rgb(88, 89, 90);
+  /* background-color: rgb(88, 89, 90); */
   border-radius: 3px;
 }
 
@@ -130,7 +130,7 @@ button {
     width: 160px;
     padding: 10px 0;
     text-align: center;
-    background-color: #444;
+    /* background-color: #444; */
     color: #fff;
     border-radius: 4px;
     text-decoration: none;
@@ -142,6 +142,6 @@ button {
   }
 
   .main-nav-button:hover {
-    background-color: #666;
+    background-color: #57c16a;
   }
 }

@@ -18,7 +18,7 @@
 .btn-online {
   width: 370px;
   max-width: 100%;
-  background-color: #709447;
+  /* background-color: #709447; */
   color: white;
   border: none;
   padding: 6px 10px;
@@ -48,7 +48,7 @@
 }
 
 .load-more {
-  background-color: #b2ff59;
+  /* background-color: #b2ff59; */
   color: #000;
   padding: 8px 16px;
   border: none;
@@ -65,7 +65,7 @@
 }
 
 .page {
-  background-color: #444;
+  /* background-color: #444; */
   color: #fff;
   padding: 6px 6px;
   margin: 2px;

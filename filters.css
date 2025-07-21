@@ -24,7 +24,7 @@
 
 .filter-toggle {
   padding: 10px 0px;
-  background-color: #383636 !important;
+  /* background-color: #383636 !important; */
   border-radius: 4px;
   /* min-width: 170px !important; */
 }
@@ -38,12 +38,12 @@
   font-weight: bold;
   cursor: pointer;
   font-size: 14px;
-  background-color: #a14f4f;
+  /* background-color: #a14f4f; */
   color: #fff;
 }
 
 .filter-toggle {
-  background-color: transparent;
+  /* background-color: transparent; */
   width: 100% !important;
   border: none;
 }

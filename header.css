@@ -3,12 +3,16 @@
   padding: 10px 0px;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: transparent;
+}
+
+.logo {
+  background-color: transparent;
 }
 
 .icon-btn {
   padding: 10px;
-  background-color: rgb(210, 136, 25);
+  /* background-color: rgb(210, 136, 25); */
   border: none;
   border-radius: 4px;
 }
