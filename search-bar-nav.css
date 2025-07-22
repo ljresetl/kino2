@@ -1,7 +1,3 @@
-/* button {
-  padding: 0px;
-} */
-
 .main-nav-button-tab {
   display: none;
 }
@@ -14,8 +10,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 0px 10px;
-  /* background-color: rgb(34, 33, 31); */
+  padding: 20px 10px;
 }
 
 .search-bar {
