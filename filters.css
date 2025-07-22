@@ -6,6 +6,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .filter-buttons {
@@ -23,10 +25,9 @@
 }
 
 .filter-toggle {
-  padding: 10px 0px;
-  /* background-color: #383636 !important; */
+  padding: 10px 20px;
+  min-width: 170px;
   border-radius: 4px;
-  /* min-width: 170px !important; */
 }
 
 .apply-btn,
