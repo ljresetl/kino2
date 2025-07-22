@@ -10,6 +10,11 @@
   white-space: nowrap;
   width: 1px;
 }
+
+.hidden {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -64,6 +69,40 @@ a:hover {
 a:active {
   background-color: #238636;
 }
+
+/* === СВІТЛА ТЕМА === */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #1c1c1c;
+}
+
+body.light-theme .container {
+  background-color: #ffffff;
+}
+
+body.light-theme section {
+  background-color: #ffffff;
+}
+
+body.light-theme button {
+  background-color: #2f81f7;
+  color: white;
+}
+
+body.light-theme button:hover {
+  background-color: #1e6cd9;
+}
+
+body.light-theme a {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #1c1c1c;
+}
+
+body.light-theme a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* === СВІТЛА ТЕМА - кінець === */
 
 @media only screen and (min-width: 768px) {
   button {

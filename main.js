@@ -22,14 +22,15 @@ async function loadPartial(id, url) {
     const html = await res.text();
     container.innerHTML = html;
 
-    // 🧠 Перевірка, чи завантажено модальні елементи — і підключення логіки
+    // 🧠 Ініціалізація після підвантаження header
     if (id === 'header') {
-      initModal(); // викликаємо після підвантаження header
+      initModal();
+      initThemeToggle(); // Ініціалізація перемикача теми
     }
   }
 }
 
-// Завантаження секцій
+// 📥 Завантаження секцій
 loadPartial('header', './header.html');
 loadPartial('search-bar', './search-bar-nav.html');
 loadPartial('filters', './filters.html');
@@ -61,4 +62,34 @@ function initModal() {
     });
   }
 }
+
+// 🌙☀️ Ініціалізація перемикача теми для усіх кнопок
+function initThemeToggle() {
+  const toggleButtons = document.querySelectorAll('.theme-toggle, .theme-toggle-deskopt');
+
+  if (!toggleButtons.length) return;
+
+  toggleButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+
+      const isLight = document.body.classList.contains('light-theme');
+      const icon = isLight ? '☀️' : '🌙';
+
+      // Синхронізуємо іконку на всіх кнопках
+      toggleButtons.forEach((b) => b.textContent = icon);
+
+      // Зберігаємо вибір теми
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  });
+
+  // Встановлення збереженої теми при завантаженні сторінки
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    toggleButtons.forEach((b) => b.textContent = '☀️');
+  }
+}
+
 

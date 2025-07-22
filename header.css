@@ -58,7 +58,6 @@
   }
 
   .header-container {
-    /* align-items: flex-end; */
     justify-content: space-between;
     margin-bottom: 300px;
   }
@@ -66,7 +65,6 @@
   .search-bar-deskopt {
     display: flex;
     gap: 30px;
-    /* margin-left: 700px; */
   }
 
   .nav-toggle-btn-deskopt {
@@ -80,7 +78,6 @@
 
   .searchInput-deskopt {
     border-radius: 3px;
-    /* background-color: #5e5757dd; */
     box-shadow: none;
     height: 45px;
     line-height: 36px;
@@ -99,25 +96,15 @@
   .search-btn-deskopt {
     display: flex;
     padding: 13px 8px;
-    background-color: rgb(51, 53, 54) !important;
     border: none;
     border-radius: 3px;
-    background-color: #238636 !important;
-    /* min-width: 20% !important; */
   }
 
   .theme-toggle-deskopt {
     min-height: 42px;
     padding: 13px 11px;
-    background-color: #238636 !important;
     border: none;
     border-radius: 3px;
-    /* min-width: 20% !important; */
-  }
-
-  .theme-toggle-deskopt,
-  .search-btn-deskopt:hover {
-    background-color: #3fa34e !important;
   }
 }
 
@@ -142,22 +129,40 @@
 .modal-window {
   background-color: #161b22; /* темний як твій фон */
   color: #c9d1d9;
-  padding: 2rem;
+  padding: 20px;
   border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
+  width: 80%;
+  max-width: 340px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   position: relative;
 }
 
-.modal-window h2 {
+.modal-window-h {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-.modal-window label {
-  display: block;
-  margin-bottom: 1rem;
+.modal-window-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-window-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-window-btn {
+  display: flex;
+  margin: 0 auto;
+  background-color: #238636;
+  border: none;
+  padding: 0.6rem 1rem;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .modal-window input {
@@ -169,24 +174,39 @@
   border-radius: 6px;
 }
 
-.modal-window button[type='submit'] {
-  background-color: #238636;
-  border: none;
-  padding: 0.6rem 1rem;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
 .modal-close {
   position: absolute;
   top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   right: 12px;
-  background: none;
+  background: transparent;
   border: none;
   font-size: 1.5rem;
   color: #8b949e;
   cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+  background-color: #238636;
+}
+
+.modal-close.light-theme {
+  background-color: #1e7f83;
+}
+
+.modal-close:focus {
+  background-color: #238636;
 }
 
 /* Модальне вікно ксс - кінець */
