@@ -145,6 +145,32 @@ body.light-theme a:hover {
   background-color: #1e6cd9;
   color: #ffffff;
 }
+/* Світла тема для модального вікна */
+/* 🌞 Світла тема для вікна */
+body.light-theme .modal-window {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* 🌞 Інпут у світлій темі */
+body.light-theme .modal-window input {
+  background-color: #f2f2f2;
+  color: #1a1a1a;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  width: 100%;
+  font-size: 15px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.light-theme .modal-window input::placeholder {
+  color: #888;
+}
+
+/* Світла тема для модального вікна - кінець */
 
 /* === СВІТЛА ТЕМА - кінець === */
 

@@ -62,7 +62,16 @@
 
     <div class="filter-buttons">
       <button class="apply-btn">ПІДІБРАТИ</button>
-      <button class="reset-btn">СКИНУТИ</button>
+      <button class="reset-btn" id="filters-reset-btn">СКИНУТИ</button>
     </div>
   </div>
 </section>
+<div class="filter-modal hidden" id="filter-modal">
+  <div class="filter-modal-content">
+    <button class="filter-modal-close" id="close-filter-modal">&times;</button>
+    <h3 class="filter-modal-title" id="filter-modal-title"></h3>
+    <ul class="filter-modal-options" id="filter-modal-options">
+      <!-- динамічні пункти -->
+    </ul>
+  </div>
+</div>
