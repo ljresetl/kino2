@@ -89,12 +89,42 @@ body.light-theme {
   color: #1c1c1c;
 }
 
+/* Світла тема для desktop поля */
+body.light-theme .searchInput-deskopt {
+  background-color: #f2f2f2;
+  color: #1a1a1a;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-theme .searchInput-deskopt::placeholder {
+  color: #888;
+}
+
+/* Світла тема для мобільного поля */
+body.light-theme input.searchInput {
+  background-color: #f2f2f2 !important;
+  color: #1a1a1a !important;
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  font-size: 16px !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-theme input.searchInput::placeholder {
+  color: #888 !important;
+}
+
 body.light-theme .container {
   background-color: #ffffff;
 }
 
 body.light-theme section {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
 }
 
 body.light-theme button {

@@ -63,4 +63,8 @@
     background-color: rgb(160, 208, 170);
     border-radius: 6px;
   }
+
+  body.light-theme .movies-img {
+    background-color: #e6e6e6;
+  }
 }

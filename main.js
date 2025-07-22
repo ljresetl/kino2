@@ -15,35 +15,37 @@
 // loadPartial('block-new', './block-new.html');
 // loadPartial('opis-kino', './opis-kino-ua.html');
 // loadPartial('footer', './footer.html');
+// 📥 Завантаження частин сторінки
 async function loadPartial(id, url) {
   const container = document.getElementById(id);
   if (container) {
     const res = await fetch(url);
     const html = await res.text();
     container.innerHTML = html;
+
+    // 🔁 Ініціалізації після підвантаження секцій
+    if (id === 'header') {
+      initModal();
+      initThemeToggle(); // Після header
+    }
+
+    if (id === 'search-bar') {
+      initThemeToggle(); // Після мобільного пошуку
+    }
   }
 }
 
-async function initApp() {
-  await Promise.all([
-    loadPartial('header', './header.html'),
-    loadPartial('search-bar', './search-bar-nav.html'),
-    loadPartial('filters', './filters.html'),
-    loadPartial('movies-list', './movies-list.html'),
-    loadPartial('movies', './movies.html'),
-    loadPartial('block-new', './block-new.html'),
-    loadPartial('opis-kino', './opis-kino-ua.html'),
-    loadPartial('footer', './footer.html')
-  ]);
+// 🔧 Підвантаження секцій
+loadPartial('header', './header.html');
+loadPartial('search-bar', './search-bar-nav.html');
+loadPartial('filters', './filters.html');
+loadPartial('movies-list', './movies-list.html');
+loadPartial('movies', './movies.html');
+loadPartial('block-new', './block-new.html');
+loadPartial('opis-kino', './opis-kino-ua.html');
+loadPartial('footer', './footer.html');
 
-  // Тепер, коли всі частини завантажені, ініціалізуємо логіку
-  initModal();
-  initThemeToggle();
-}
-
-initApp();
-
-// 🔧 Функція ініціалізації модального вікна
+// 🔧 Ініціалізація модального вікна
 function initModal() {
   const openBtn = document.getElementById('open-modal-btn');
   const modal = document.getElementById('modal');
@@ -69,10 +71,9 @@ function initModal() {
 // 🌙☀️ Ініціалізація перемикача теми
 function initThemeToggle() {
   const toggleButtons = document.querySelectorAll('.theme-toggle, .theme-toggle-deskopt');
-  console.log('Toggle buttons found:', toggleButtons.length);
-
   if (!toggleButtons.length) return;
 
+  // Налаштовуємо обробники для всіх перемикачів
   toggleButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       document.body.classList.toggle('light-theme');
@@ -80,18 +81,19 @@ function initThemeToggle() {
       const isLight = document.body.classList.contains('light-theme');
       const icon = isLight ? '☀️' : '🌙';
 
+      // Оновлюємо всі іконки
       toggleButtons.forEach((b) => b.textContent = icon);
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
 
-      console.log('Theme toggled:', isLight ? 'light' : 'dark');
+      // Зберігаємо в localStorage
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
   });
 
+  // Встановлюємо тему при завантаженні
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     document.body.classList.add('light-theme');
     toggleButtons.forEach((b) => b.textContent = '☀️');
-    console.log('Light theme loaded from localStorage');
   }
 }
 
