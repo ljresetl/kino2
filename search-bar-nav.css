@@ -105,6 +105,8 @@
     display: flex;
     justify-content: flex-end; /* Вирівнює контент праворуч */
     padding: 0 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .tabs,
