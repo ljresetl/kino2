@@ -70,23 +70,37 @@
 }
 
 .filter-modal-content {
-  background: #fff;
-  color: #000;
+  background-color: #161b22; /* темний як твій фон */
+  color: #c9d1d9;
   padding: 20px;
   border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
+  width: 80%;
+  max-width: 340px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   position: relative;
 }
 
 .filter-modal-close {
   position: absolute;
   top: 10px;
-  right: 14px;
-  font-size: 24px;
-  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 12px;
+  background: transparent;
   border: none;
+  font-size: 1.5rem;
+  color: #8b949e;
   cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
 
 .filter-modal-options {
