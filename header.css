@@ -60,6 +60,7 @@
   .header-container {
     justify-content: space-between;
     margin-bottom: 300px;
+    padding: 20px 50px;
   }
 
   .search-bar-deskopt {
