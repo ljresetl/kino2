@@ -16,8 +16,30 @@
     </div>
 
     <div class="header-icons-deskopt">
-      <button class="icon-btn icon-btn-reg-deskopt">Реєстрація</button>
-      <button class="icon-btn icon-btn-vhid-deskopt">Вхід</button>
+      <button class="icon-btn icon-btn-reg-deskopt" id="open-modal-btn">
+        Реєстрація/Вхід
+      </button>
+
+      <!-- 🪟 Модальне вікно -->
+      <div class="modal-overlay hidden" id="modal">
+        <div class="modal-window">
+          <button class="modal-close" id="close-modal-btn">&times;</button>
+          <h2>Реєстрація / Вхід</h2>
+          <form>
+            <label>
+              Email:
+              <input type="email" required />
+            </label>
+            <label>
+              Пароль:
+              <input type="password" required />
+            </label>
+            <button type="submit">Увійти</button>
+          </form>
+        </div>
+      </div>
+      <!-- 🪟 Модальне вікно - кінець -->
+      <!-- <button class="icon-btn icon-btn-vhid-deskopt">Вхід</button> -->
       <button class="icon-btn nav-toggle-btn-deskopt">☰</button>
     </div>
   </div>

@@ -37,7 +37,7 @@
 .search-btn {
   display: flex;
   padding: 13px 8px;
-  /* background-color: rgb(51, 53, 54) !important; */
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 3px;
   min-width: 20% !important;
@@ -46,7 +46,7 @@
 .theme-toggle {
   min-height: 42px;
   padding: 13px 11px;
-  /* background-color: rgb(51, 53, 54) !important; */
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 3px;
   min-width: 20% !important;
