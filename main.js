@@ -21,24 +21,27 @@ async function loadPartial(id, url) {
     const res = await fetch(url);
     const html = await res.text();
     container.innerHTML = html;
-
-    // 🧠 Ініціалізація після підвантаження header
-    if (id === 'header') {
-      initModal();
-      initThemeToggle(); // Ініціалізація перемикача теми
-    }
   }
 }
 
-// 📥 Завантаження секцій
-loadPartial('header', './header.html');
-loadPartial('search-bar', './search-bar-nav.html');
-loadPartial('filters', './filters.html');
-loadPartial('movies-list', './movies-list.html');
-loadPartial('movies', './movies.html');
-loadPartial('block-new', './block-new.html');
-loadPartial('opis-kino', './opis-kino-ua.html');
-loadPartial('footer', './footer.html');
+async function initApp() {
+  await Promise.all([
+    loadPartial('header', './header.html'),
+    loadPartial('search-bar', './search-bar-nav.html'),
+    loadPartial('filters', './filters.html'),
+    loadPartial('movies-list', './movies-list.html'),
+    loadPartial('movies', './movies.html'),
+    loadPartial('block-new', './block-new.html'),
+    loadPartial('opis-kino', './opis-kino-ua.html'),
+    loadPartial('footer', './footer.html')
+  ]);
+
+  // Тепер, коли всі частини завантажені, ініціалізуємо логіку
+  initModal();
+  initThemeToggle();
+}
+
+initApp();
 
 // 🔧 Функція ініціалізації модального вікна
 function initModal() {
@@ -63,9 +66,10 @@ function initModal() {
   }
 }
 
-// 🌙☀️ Ініціалізація перемикача теми для усіх кнопок
+// 🌙☀️ Ініціалізація перемикача теми
 function initThemeToggle() {
   const toggleButtons = document.querySelectorAll('.theme-toggle, .theme-toggle-deskopt');
+  console.log('Toggle buttons found:', toggleButtons.length);
 
   if (!toggleButtons.length) return;
 
@@ -76,19 +80,18 @@ function initThemeToggle() {
       const isLight = document.body.classList.contains('light-theme');
       const icon = isLight ? '☀️' : '🌙';
 
-      // Синхронізуємо іконку на всіх кнопках
       toggleButtons.forEach((b) => b.textContent = icon);
-
-      // Зберігаємо вибір теми
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+      console.log('Theme toggled:', isLight ? 'light' : 'dark');
     });
   });
 
-  // Встановлення збереженої теми при завантаженні сторінки
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     document.body.classList.add('light-theme');
     toggleButtons.forEach((b) => b.textContent = '☀️');
+    console.log('Light theme loaded from localStorage');
   }
 }
 
