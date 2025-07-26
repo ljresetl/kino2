@@ -12,9 +12,15 @@
   gap: 20px;
 }
 
+.no-movies-msg {
+  margin-top: 0px !important;
+  margin: 0 auto;
+}
+
 .movie-poster-img {
   border-radius: 6px;
   width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .btn-online {

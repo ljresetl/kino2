@@ -11,11 +11,8 @@ const sectionsToLoad = [
 ];
 
 let loadedSections = 0;
-
-// ✅ Початкові назви фільтрів (щоб можна було скинути)
 const initialFilterNames = {};
 
-// ✅ Підвантаження HTML-фрагментів
 async function loadPartial(id, url) {
   const container = document.getElementById(id);
   if (container) {
@@ -23,23 +20,23 @@ async function loadPartial(id, url) {
     const html = await res.text();
     container.innerHTML = html;
 
-    // Локальні ініціалізації після підвантаження
     if (id === 'header') initModal();
-    if (id === 'filters') initFilterModal();
+    if (id === 'filters') {
+      initFilterModal();
+      initApplyButton();
+    }
 
     loadedSections++;
 
-    // Глобальна ініціалізація після всіх секцій
     if (loadedSections === sectionsToLoad.length) {
       initThemeToggle();
+      // При завантаженні НЕ застосовуємо фільтри автоматично
     }
   }
 }
 
-// ✅ Запуск завантаження всіх секцій
 sectionsToLoad.forEach(([id, url]) => loadPartial(id, url));
 
-// ✅ Ініціалізація модального вікна (наприклад, модалка у header)
 function initModal() {
   const openBtn = document.getElementById('open-modal-btn');
   const modal = document.getElementById('modal');
@@ -48,16 +45,12 @@ function initModal() {
   if (openBtn && modal && closeBtn) {
     openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
     closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.add('hidden');
-      }
+      if (e.target === modal) modal.classList.add('hidden');
     });
   }
 }
 
-// ✅ Ініціалізація модалки фільтрів
 function initFilterModal() {
   const modal = document.getElementById('filter-modal');
   const closeBtn = document.getElementById('close-filter-modal');
@@ -67,12 +60,8 @@ function initFilterModal() {
   const filterItems = document.querySelectorAll('.filter-item');
   const filterToggles = document.querySelectorAll('.filter-toggle');
 
-  if (!modal || !closeBtn || !modalTitle || !modalOptions) {
-    console.warn('Filter modal elements not found');
-    return;
-  }
+  if (!modal || !closeBtn || !modalTitle || !modalOptions) return;
 
-  // Запам'ятовуємо початкові назви фільтрів
   filterItems.forEach(item => {
     const key = item.dataset.filter;
     const btn = item.querySelector('.filter-toggle');
@@ -81,13 +70,11 @@ function initFilterModal() {
     }
   });
 
-  // Відкриття модалки при кліку на фільтр
   filterToggles.forEach((btn) => {
     btn.addEventListener('click', () => {
       const filterItem = btn.closest('.filter-item');
       if (!filterItem) return;
 
-      const filterKey = filterItem.dataset.filter;
       const optionsList = filterItem.querySelectorAll('.filter-menu-li');
       if (optionsList.length === 0) return;
 
@@ -103,6 +90,8 @@ function initFilterModal() {
         li.addEventListener('click', () => {
           btn.textContent = li.textContent;
           modal.classList.add('hidden');
+          // НЕ застосовуємо фільтри при виборі опції, лише при натисканні кнопки
+          // applyFilters();
         });
       });
 
@@ -110,19 +99,11 @@ function initFilterModal() {
     });
   });
 
-  // Закриття модалки кнопкою
-  closeBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-  });
-
-  // Закриття модалки кліком на фон
+  closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.add('hidden');
-    }
+    if (e.target === modal) modal.classList.add('hidden');
   });
 
-  // Кнопка "Скинути" — повертає всі фільтри до початкового стану
   const resetBtn = document.getElementById('filters-reset-btn');
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
@@ -133,11 +114,79 @@ function initFilterModal() {
           btn.textContent = initialFilterNames[key];
         }
       });
+      // Після скидання показуємо всі фільми
+      applyFilters(); 
     });
   }
 }
 
-// ✅ Ініціалізація перемикача теми
+function initApplyButton() {
+  const applyBtn = document.querySelector('.apply-btn');
+  if (applyBtn) {
+    applyBtn.addEventListener('click', () => {
+      applyFilters();
+    });
+  }
+}
+
+function getFilterValue(filterName) {
+  const filterItem = document.querySelector(`.filter-item[data-filter="${filterName}"]`);
+  const toggle = filterItem?.querySelector('.filter-toggle');
+  return toggle?.textContent?.trim().toLowerCase() || '';
+}
+
+function applyFilters() {
+  const cards = document.querySelectorAll('.movies-list-movie-card');
+  const noMoviesMsgs = document.querySelectorAll('.no-movies-msg');
+
+  const selectedYear = getFilterValue('year');
+  const selectedCountry = getFilterValue('country');
+  const selectedGenre = getFilterValue('genre');
+  const selectedDate = getFilterValue('date');
+
+  // Нормалізація для перевірки "усі"
+  const isAllYear = selectedYear === '' || selectedYear.includes('усі') || selectedYear === 'рік';
+  const isAllCountry = selectedCountry === '' || selectedCountry.includes('усі') || selectedCountry === 'країна';
+  const isAllGenre = selectedGenre === '' || selectedGenre.includes('усі') || selectedGenre === 'жанр';
+  const isAllDate = selectedDate === '' || selectedDate.includes('усі') || selectedDate === 'дата';
+
+  // Якщо всі фільтри "усі" — показуємо всі фільми
+  const noFiltersSelected = isAllYear && isAllCountry && isAllGenre && isAllDate;
+
+  let anyVisible = false;
+
+  cards.forEach(card => {
+    if (noFiltersSelected) {
+      // Показуємо всі
+      card.style.display = '';
+      anyVisible = true;
+      return;
+    }
+
+    const year = card.dataset.year?.toLowerCase() || '';
+    const country = card.dataset.country?.toLowerCase() || '';
+    const genres = card.dataset.genre?.toLowerCase() || '';
+    const date = card.dataset.date?.toLowerCase() || '';
+
+    const genreList = genres.split(',').map(g => g.trim());
+
+    const matchYear = isAllYear || year.includes(selectedYear);
+    const matchCountry = isAllCountry || country.includes(selectedCountry);
+    const matchGenre = isAllGenre || genreList.includes(selectedGenre);
+    const matchDate = isAllDate || date.includes(selectedDate);
+
+    const isVisible = matchYear && matchCountry && matchGenre && matchDate;
+
+    card.style.display = isVisible ? '' : 'none';
+    if (isVisible) anyVisible = true;
+  });
+
+  noMoviesMsgs.forEach(msg => {
+    msg.style.display = anyVisible ? 'none' : 'block';
+    msg.textContent = anyVisible ? '' : 'Фільм не знайдено';
+  });
+}
+
 function initThemeToggle() {
   const toggleButtons = document.querySelectorAll('.theme-toggle, .theme-toggle-deskopt');
   if (!toggleButtons.length) return;
