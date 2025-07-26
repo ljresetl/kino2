@@ -145,25 +145,6 @@
   .tabs {
     gap: 2px;
   }
-
-  /* .search-bar {
-    display: flex;
-    width: 100%;
-  }
-
-  .searchInput {
-    flex: 0 0 60%;
-    padding: 8px;
-    font-size: 16px;
-  }
-
-  .search-btn,
-  .theme-toggle {
-    flex: 1;
-    padding: 8px;
-    font-size: 12px;
-    cursor: pointer;
-  } */
 }
 
 @media only screen and (min-width: 1280px) {
