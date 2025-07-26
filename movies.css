@@ -128,3 +128,42 @@
     min-height: 430px;
   }
 }
+
+.responsive-video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto; /* по центру */
+}
+
+.responsive-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Додатково: обмеження максимальної ширини для великих екранів */
+/* Для мобільних (маленькі екрани) */
+@media (max-width: 767px) {
+  .responsive-video-wrapper {
+    max-width: 100%;
+  }
+
+  /* Для планшетів (середні екрани) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .responsive-video-wrapper {
+      max-width: 600px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .responsive-video-wrapper {
+      max-width: 900px; /* наприклад, максимум 900px */
+    }
+  }
+}

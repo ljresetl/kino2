@@ -50,14 +50,14 @@ function filterToSingleMovie() {
       player.innerHTML = `
         <div class="movie-player" style="margin-top: 30px;">
           <h2>🎬 Перегляд фільму онлайн</h2>
-          <iframe
-            width="100%"
-            height="500"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Movie Player"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+          <div class="responsive-video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        frameborder="0"
+        allowfullscreen
+        title="Movie Player"
+      ></iframe>
+    </div>
         </div>
       `;
       card.after(player);
