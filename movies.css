@@ -6,12 +6,41 @@
   padding-bottom: 20px;
 }
 
-/* .movie-top-wrapper {
-  width: 100%;
+/* Блок рейтингу початок */
+
+.rating-box {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-} */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 8px 12px;
+  width: 70px;
+  font-family: sans-serif;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.rating-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffd700; /* золотий */
+}
+
+.rating-stars {
+  font-size: 16px;
+  color: #ffd700;
+  line-height: 1;
+}
+
+.rating-source {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* Блок рейтингу кінець */
 
 .movie-poster {
   display: flex;
@@ -47,7 +76,8 @@
 
 .text-rating {
   display: flex;
-  /* max-width: 50%; */
+  flex-direction: column-reverse;
+  gap: 20px;
 }
 
 .movie-meta {
