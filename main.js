@@ -1,4 +1,4 @@
-// ✅ Список секцій, які підвантажуються
+// ✅ Список секцій для підвантаження
 const sectionsToLoad = [
   ['header', './header.html'],
   ['search-bar', './search-bar-nav.html'],
@@ -34,10 +34,19 @@ async function loadPartial(id, url) {
     if (loadedSections === sectionsToLoad.length) {
       initThemeToggle();
       initWatchButtons();
+
+      // --- Відображати тільки короткий опис фільму, ховати повний ---
+      const fullDesc = document.querySelector('.movie-description .full-desc');
+      const shortDesc = document.querySelector('.movie-description .short-desc');
+      if (fullDesc && shortDesc) {
+        shortDesc.style.display = 'inline';
+        fullDesc.style.display = 'none';
+      }
     }
   }
 }
 
+// Запускаємо завантаження секцій
 sectionsToLoad.forEach(([id, url]) => loadPartial(id, url));
 
 function initModal() {
@@ -65,6 +74,7 @@ function initFilterModal() {
 
   if (!modal || !closeBtn || !modalTitle || !modalOptions) return;
 
+  // Запамʼятовуємо початкові назви фільтрів
   filterItems.forEach(item => {
     const key = item.dataset.filter;
     const btn = item.querySelector('.filter-toggle');
@@ -73,6 +83,7 @@ function initFilterModal() {
     }
   });
 
+  // Відкриваємо модалку при кліку на фільтр
   filterToggles.forEach((btn) => {
     btn.addEventListener('click', () => {
       const filterItem = btn.closest('.filter-item');
@@ -105,6 +116,7 @@ function initFilterModal() {
     if (e.target === modal) modal.classList.add('hidden');
   });
 
+  // Кнопка скидання фільтрів
   const resetBtn = document.getElementById('filters-reset-btn');
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
@@ -165,22 +177,35 @@ function applyFilters() {
     const genres = card.dataset.genre?.toLowerCase() || '';
     const date = card.dataset.date?.toLowerCase() || '';
 
+    // genre може бути список через кому
     const genreList = genres.split(',').map(g => g.trim());
 
-    const matchYear = isAllYear || year.includes(selectedYear);
-    const matchCountry = isAllCountry || country.includes(selectedCountry);
-    const matchGenre = isAllGenre || genreList.includes(selectedGenre);
-    const matchDate = isAllDate || date.includes(selectedDate);
+    const matchesYear = isAllYear || year === selectedYear;
+    const matchesCountry = isAllCountry || country === selectedCountry;
+    const matchesGenre = isAllGenre || genreList.includes(selectedGenre);
+    const matchesDate = isAllDate || date === selectedDate;
 
-    const isVisible = matchYear && matchCountry && matchGenre && matchDate;
-
-    card.style.display = isVisible ? '' : 'none';
-    if (isVisible) anyVisible = true;
+    if (matchesYear && matchesCountry && matchesGenre && matchesDate) {
+      card.style.display = '';
+      anyVisible = true;
+    } else {
+      card.style.display = 'none';
+    }
   });
 
   noMoviesMsgs.forEach(msg => {
-    msg.style.display = anyVisible ? 'none' : 'block';
-    msg.textContent = anyVisible ? '' : 'Фільм не знайдено';
+    msg.style.display = anyVisible ? 'none' : '';
+  });
+}
+
+function initWatchButtons() {
+  document.querySelectorAll('.btn-online').forEach(button => {
+    button.addEventListener('click', () => {
+      const movieId = button.dataset.movieId;
+      if (movieId) {
+        window.location.href = `film-online-storinka.html?id=${movieId}`;
+      }
+    });
   });
 }
 
@@ -203,21 +228,6 @@ function initThemeToggle() {
       const icon = isLight ? '☀️' : '🌙';
       toggleButtons.forEach((b) => (b.textContent = icon));
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
-  });
-}
-
-// ✅ ДОДАНО: кнопки "Дивитись онлайн"
-function initWatchButtons() {
-  const buttons = document.querySelectorAll('.btn-online');
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const movieId = button.dataset.movieId;
-      if (movieId) {
-        window.location.href = `film-online-storinka.html?id=${movieId}`;
-      } else {
-        window.location.href = 'film-online-storinka.html?id=1';
-      }
     });
   });
 }

@@ -22,6 +22,14 @@ sectionsToLoad.forEach(([id, url]) => {
         filterToSingleMovie();
         initWatchButtons();
         initThemeToggle();
+
+        // --- Відображати тільки повний опис фільму, ховати короткий ---
+        const fullDesc = document.querySelector('.movie-description .full-desc');
+        const shortDesc = document.querySelector('.movie-description .short-desc');
+        if (fullDesc && shortDesc) {
+          shortDesc.style.display = 'none';
+          fullDesc.style.display = 'inline';
+        }
       }
     });
 });
@@ -51,13 +59,13 @@ function filterToSingleMovie() {
         <div class="movie-player" style="margin-top: 30px;">
           <h2>🎬 Перегляд фільму онлайн</h2>
           <div class="responsive-video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameborder="0"
-        allowfullscreen
-        title="Movie Player"
-      ></iframe>
-    </div>
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              frameborder="0"
+              allowfullscreen
+              title="Movie Player"
+            ></iframe>
+          </div>
         </div>
       `;
       card.after(player);

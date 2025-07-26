@@ -32,6 +32,15 @@
   margin-bottom: 10px;
 }
 
+/* Для списку фільмів — обрізаємо опис */
+.movie-description .full-desc {
+  display: none;
+}
+/* Показуємо */
+.movie-description .short-desc {
+  display: inline;
+}
+
 @media only screen and (min-width: 768px) {
   .movie-card[data-index='4'] {
     display: block;
