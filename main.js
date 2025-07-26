@@ -25,12 +25,15 @@ async function loadPartial(id, url) {
       initFilterModal();
       initApplyButton();
     }
+    if (['movies-list', 'movies', 'block-new'].includes(id)) {
+      initWatchButtons();
+    }
 
     loadedSections++;
 
     if (loadedSections === sectionsToLoad.length) {
       initThemeToggle();
-      // При завантаженні НЕ застосовуємо фільтри автоматично
+      initWatchButtons();
     }
   }
 }
@@ -90,8 +93,6 @@ function initFilterModal() {
         li.addEventListener('click', () => {
           btn.textContent = li.textContent;
           modal.classList.add('hidden');
-          // НЕ застосовуємо фільтри при виборі опції, лише при натисканні кнопки
-          // applyFilters();
         });
       });
 
@@ -114,8 +115,7 @@ function initFilterModal() {
           btn.textContent = initialFilterNames[key];
         }
       });
-      // Після скидання показуємо всі фільми
-      applyFilters(); 
+      applyFilters();
     });
   }
 }
@@ -144,20 +144,17 @@ function applyFilters() {
   const selectedGenre = getFilterValue('genre');
   const selectedDate = getFilterValue('date');
 
-  // Нормалізація для перевірки "усі"
   const isAllYear = selectedYear === '' || selectedYear.includes('усі') || selectedYear === 'рік';
   const isAllCountry = selectedCountry === '' || selectedCountry.includes('усі') || selectedCountry === 'країна';
   const isAllGenre = selectedGenre === '' || selectedGenre.includes('усі') || selectedGenre === 'жанр';
   const isAllDate = selectedDate === '' || selectedDate.includes('усі') || selectedDate === 'дата';
 
-  // Якщо всі фільтри "усі" — показуємо всі фільми
   const noFiltersSelected = isAllYear && isAllCountry && isAllGenre && isAllDate;
 
   let anyVisible = false;
 
   cards.forEach(card => {
     if (noFiltersSelected) {
-      // Показуємо всі
       card.style.display = '';
       anyVisible = true;
       return;
@@ -206,6 +203,21 @@ function initThemeToggle() {
       const icon = isLight ? '☀️' : '🌙';
       toggleButtons.forEach((b) => (b.textContent = icon));
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  });
+}
+
+// ✅ ДОДАНО: кнопки "Дивитись онлайн"
+function initWatchButtons() {
+  const buttons = document.querySelectorAll('.btn-online');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const movieId = button.dataset.movieId;
+      if (movieId) {
+        window.location.href = `film-online-storinka.html?id=${movieId}`;
+      } else {
+        window.location.href = 'film-online-storinka.html?id=1';
+      }
     });
   });
 }
