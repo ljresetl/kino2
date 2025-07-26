@@ -95,15 +95,15 @@
     gap: 30px;
   }
 
-  .movie-poster {
+  /* .movie-poster {
     min-width: 400px;
     max-height: 400px;
-  }
+  } */
 
-  .movie-poster-img {
+  /* .movie-poster-img {
     width: 100%;
     min-height: 812px;
-  }
+  } */
 
   .btn-online {
     max-width: 100%;
