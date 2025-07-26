@@ -5,6 +5,9 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.movies-list-movie-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* легка тінь */
+}
 
 /* Блок рейтингу початок */
 
@@ -180,7 +183,7 @@
 @media only screen and (min-width: 1280px) {
   .movie-poster-img {
     width: 100%;
-    min-height: 430px;
+    height: 500px; /* фіксована висота */
   }
 }
 
