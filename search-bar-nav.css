@@ -22,7 +22,7 @@
 }
 
 .searchInput {
-  min-height: 44px;
+  /* min-height: 14px; */
   background-color: rgb(51, 53, 54) !important;
   border: none;
   border-radius: 3px;
@@ -49,11 +49,14 @@
 
 .main-nav {
   display: flex;
-  justify-content: space-between;
-  gap: 1px;
+  /* justify-content: space-between; */
+  justify-content: center;
+  gap: 2px;
 }
 
 .main-nav-button {
+  width: 100px;
+  /* min-width: 20%; */
   padding: 6px 8px;
   /* background-color: rgb(88, 89, 90); */
   border-radius: 3px;
@@ -88,7 +91,7 @@
   }
 
   .main-nav-button {
-    min-width: 24.8%;
+    min-width: 22.5%;
   }
 
   .tabs {

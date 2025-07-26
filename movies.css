@@ -90,11 +90,19 @@
 
   .movies-list-movie-card {
     display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
     gap: 30px;
+  }
+
+  .movie-poster {
+    min-width: 400px;
+    max-height: 400px;
   }
 
   .movie-poster-img {
     width: 100%;
+    min-height: 812px;
   }
 
   .btn-online {
@@ -113,3 +121,10 @@
     border: 2px solid #171715;
   }
 } */
+
+@media only screen and (min-width: 1280px) {
+  .movie-poster-img {
+    width: 100%;
+    min-height: 430px;
+  }
+}

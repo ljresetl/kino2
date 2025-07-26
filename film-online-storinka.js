@@ -2,8 +2,7 @@ const sectionsToLoad = [
   ['header', './header.html'],
   ['search-bar', './search-bar-nav.html'],
   ['filters', './filters.html'],
-  ['movies-list', './movies-list.html'],
-  ['movies', './movies.html'],
+  ['movies', './movies.html'], // лише один блок з карткою
   ['block-new', './block-new.html'],
   ['opis-kino', './opis-kino-ua.html'],
   ['footer', './footer.html'],
